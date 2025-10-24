@@ -97,6 +97,17 @@ cd GGUF-LAUNCHER
 
 3. Build and run on your Android device or emulator
 
+## CI/CD
+
+The project includes a GitHub Actions workflow that automatically builds the application on every push and pull request to the main branches. The workflow:
+
+- Builds debug and release APKs
+- Runs unit tests
+- Performs lint checks
+- Uploads build artifacts
+
+You can find the workflow configuration in `.github/workflows/build.yml`. Build artifacts are available in the Actions tab after each successful run.
+
 ## Usage
 
 ### Loading a Model
