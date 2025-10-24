@@ -46,7 +46,7 @@ jobs:
       
     - name: Upload Lint Results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: lint-results
         path: app/build/reports/lint-results-*.html
@@ -58,7 +58,7 @@ jobs:
       
     - name: Upload Test Results
       if: always()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: test-results
         path: app/build/reports/tests/
@@ -68,7 +68,7 @@ jobs:
       run: ./gradlew assembleDebug
       
     - name: Upload Debug APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-debug
         path: app/build/outputs/apk/debug/app-debug.apk
@@ -79,7 +79,7 @@ jobs:
       
     - name: Upload Release APK
       if: success()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-release-unsigned
         path: app/build/outputs/apk/release/app-release-unsigned.apk
