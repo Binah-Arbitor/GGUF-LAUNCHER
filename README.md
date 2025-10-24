@@ -74,6 +74,42 @@ Users can customize the following parameters:
 - Android Studio Arctic Fox or later
 - Gradle 8.2+
 - Kotlin 1.9.10+
+- JDK 17 or later
+
+## Building
+
+### Using Android Studio
+
+1. Open the project in Android Studio
+2. Sync Gradle files
+3. Build and run on your Android device or emulator
+
+### Using Command Line
+
+The project includes Gradle wrapper, so you don't need to install Gradle separately.
+
+Build debug APK:
+```bash
+./gradlew assembleDebug
+```
+
+Build release APK:
+```bash
+./gradlew assembleRelease
+```
+
+Run tests:
+```bash
+./gradlew testDebugUnitTest
+```
+
+### Continuous Integration
+
+The project uses GitHub Actions for automated builds. The workflow:
+- Triggers on push to `main` or `develop` branches
+- Runs unit tests
+- Builds both debug and release APKs
+- Uploads APK artifacts for download
 
 ## Dependencies
 
@@ -87,15 +123,32 @@ Users can customize the following parameters:
 
 ## Installation
 
+### From Source
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/Binah-Arbitor/GGUF-LAUNCHER.git
 cd GGUF-LAUNCHER
 ```
 
-2. Open the project in Android Studio
+2. Build using Gradle:
+```bash
+./gradlew assembleDebug
+```
 
-3. Build and run on your Android device or emulator
+3. Install the APK on your device:
+```bash
+adb install app/build/outputs/apk/debug/app-debug.apk
+```
+
+Or open the project in Android Studio and run it directly.
+
+### From GitHub Actions
+
+You can download pre-built APKs from the GitHub Actions artifacts:
+1. Go to the [Actions tab](https://github.com/Binah-Arbitor/GGUF-LAUNCHER/actions)
+2. Select the latest successful workflow run
+3. Download the debug or release APK artifact
 
 ## Usage
 
