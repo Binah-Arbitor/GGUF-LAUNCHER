@@ -97,6 +97,36 @@ cd GGUF-LAUNCHER
 
 3. Build and run on your Android device or emulator
 
+### Building from Command Line
+
+You can also build the project using Gradle from the command line:
+
+```bash
+# Build debug APK
+./gradlew assembleDebug
+
+# Build release APK
+./gradlew assembleRelease
+
+# Run tests
+./gradlew test
+
+# Build everything
+./gradlew build
+```
+
+## Continuous Integration
+
+This project uses GitHub Actions for automated builds. The workflow:
+- Runs on push to `main` and `develop` branches
+- Runs on pull requests to `main` and `develop` branches
+- Can be manually triggered via workflow_dispatch
+- Builds both debug and release APKs
+- Runs unit tests
+- Uploads build artifacts (APKs and test results)
+
+Build status: Check the Actions tab in the GitHub repository
+
 ## Usage
 
 ### Loading a Model
